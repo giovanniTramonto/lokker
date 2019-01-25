@@ -9,7 +9,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $axios }) {
+    // $axios.setToken('', 'Bearer')
+    // const users = await $axios.$post(
+    //   'http://localhost:1337/graphql',
+    //   {
+    //     query: `
+    //       query {
+    //         users {
+    //           username
+    //         }
+    //       }
+    //     `
+    //   }
+    // )
+    return { users: '' }
+  }
+}
 </script>
 
 <style>
