@@ -17,14 +17,14 @@ export default {
   },
 
   methods: {
-    async authLogin() {
+    authLogin() {
       const { email, password, $store } = this
-      // if (email !== '' && password !== 'Password') {
-      await $store.dispatch('Auth/login', {
-        email,
-        password
-      })
-      // }
+      if (email !== '' && password !== 'Password') {
+        $store.dispatch('auth/login', {
+          email,
+          password
+        })
+      }
     }
   }
 }
