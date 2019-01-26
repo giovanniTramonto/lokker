@@ -1,7 +1,8 @@
 {
   "name": "lokker-frontend",
+  "title": "Lokker",
   "version": "1.0.0",
-  "description": "My exceptional Nuxt.js project",
+  "description": "Mach dich lokker",
   "author": "Johannes Abendroth",
   "private": true,
   "config": {
@@ -23,10 +24,22 @@
   "devDependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-core": "7.0.0-bridge.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^8.2.1",
     "babel-jest": "^23.6.0",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.7.1",
+    "include-media": "^1.4.9",
     "jest": "^23.6.0",
+    "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
+    "prettier": "1.14.3",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
     "vue-jest": "^3.0.2"
   }
 }

@@ -1,0 +1,11 @@
+.button {
+  background: map-get($colors, 'yellow');
+  color: map-get($colors, 'main');
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  &:active,
+  &:hover {
+    background: darken(map-get($colors, 'yellow'), 5%);
+  }
+}

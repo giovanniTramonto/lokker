@@ -1,15 +1,19 @@
-<template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        … mach dich lokker :)
-      </h1>
-    </div>
-  </section>
+<template lang="pug">
+  section.l-section.l-section--vertical
+    LokkerLogo.l-block
+    UserLogin.l-block
 </template>
 
 <script>
+import UserLogin from '@/components/UserLogin'
+import LokkerLogo from '@/components/LokkerLogo'
+
 export default {
+  components: {
+    UserLogin,
+    LokkerLogo
+  },
+
   async asyncData({ $axios }) {
     // $axios.setToken('', 'Bearer')
     // const users = await $axios.$post(
@@ -28,24 +32,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-</style>

@@ -1,0 +1,27 @@
+.l-block {
+  & + & {
+    margin-top: 2rem;
+  }
+}
+
+.l-line {
+  & + & {
+    margin-top: 0.5rem;
+  }
+}
+
+.l-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.l-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &--vertical {
+    flex-direction: column;
+  }
+}

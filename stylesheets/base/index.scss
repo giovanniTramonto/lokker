@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.45;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: map-get($colors, 'main');
+  color: map-get($colors, 'text');
+}
+
+p {
+  & + * {
+    margin-top: 0.5rem;
+  }
+}
+
+a {
+  color: map-get($colors, 'link');
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: map-get($colors, 'text');
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+input {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.5rem;
+}
