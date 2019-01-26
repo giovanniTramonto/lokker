@@ -1,6 +1,6 @@
 <template lang="pug">
   form(:class="$style.form")
-    form-group.l-line(:class="$style.credentials")
+    fieldset.l-line(:class="$style.credentials")
       input.l-line(type="text", value="User")
       input.l-line(type="password", value="Password")
 
