@@ -1,7 +1,6 @@
 const pkg = require('./package')
 const path = require('path')
 
-
 module.exports = {
   mode: 'spa',
 
@@ -35,25 +34,20 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    '@/stylesheets/index.scss'
-  ],
+  css: ['@/stylesheets/index.scss'],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: [],
 
   /*
   ** Nuxt.js modules
   */
-  modules: [
-    '@nuxtjs/axios'
-  ],
+  modules: ['@nuxtjs/axios'],
 
   axios: {
-    // proxyHeaders: false
+    baseURL: 'http://localhost:1337'
   },
 
   /*
@@ -66,14 +60,12 @@ module.exports = {
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push(
-          {
-            enforce: 'pre',
-            test: /\.(js|vue)$/,
-            loader: 'eslint-loader',
-            exclude: /(node_modules)/
-          }
-        )
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
       }
 
       for (const ruleList of Object.values(config.module.rules || {})) {

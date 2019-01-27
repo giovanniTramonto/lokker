@@ -1,34 +1,37 @@
 <template lang="pug">
-  section.l-section.l-section--vertical
-    LokkerLogo.l-block
-    UserLogin.l-block
+  section.l-section
+    .l-block
+      h4(:class="$style.title") Hi {{ username }} : )
 </template>
 
 <script>
-import UserLogin from '@/components/UserLogin'
-import LokkerLogo from '@/components/LokkerLogo'
+import { mapGetters } from 'vuex'
 
 export default {
-  components: {
-    UserLogin,
-    LokkerLogo
+  async asyncData({ $axios }) {
+    // const users = await $axios.$post('/graphql', {
+    //   query: `
+    //     query {
+    //       user(id: ${user.id}) {
+    //         username
+    //       }
+    //     }
+    //   `
+    // })
+    // return { user: user }
   },
 
-  async asyncData({ $axios }) {
-    // $axios.setToken('', 'Bearer')
-    // const users = await $axios.$post(
-    //   'http://localhost:1337/graphql',
-    //   {
-    //     query: `
-    //       query {
-    //         users {
-    //           username
-    //         }
-    //       }
-    //     `
-    //   }
-    // )
-    return { users: '' }
+  computed: {
+    username() {
+      return (this.user || {}).username
+    },
+    ...mapGetters('auth', ['user'])
   }
 }
 </script>
+
+<style lang="scss" module>
+.title {
+  color: map-get($colors, 'white');
+}
+</style>
