@@ -47,7 +47,10 @@ module.exports = {
   modules: ['@nuxtjs/axios'],
 
   axios: {
-    baseURL: 'http://localhost:1337'
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://boiling-earth-43375.herokuapp.com/'
+        : 'http://localhost:1337'
   },
 
   /*
