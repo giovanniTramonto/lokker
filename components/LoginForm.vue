@@ -51,7 +51,12 @@ export default {
 .form {
   display: flex;
   flex-direction: column;
-  min-width: 15rem;
+}
+
+@include media('>=tablet') {
+  .form {
+    min-width: 15rem;
+  }
 }
 
 .credentials {
