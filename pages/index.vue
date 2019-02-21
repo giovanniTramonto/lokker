@@ -8,19 +8,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData({ $axios }) {
-    // const users = await $axios.$post('/graphql', {
-    //   query: `
-    //     query {
-    //       user(id: ${user.id}) {
-    //         username
-    //       }
-    //     }
-    //   `
-    // })
-    // return { user: user }
-  },
-
   computed: {
     username() {
       return (this.user || {}).username

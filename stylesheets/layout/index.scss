@@ -19,6 +19,10 @@
   &--vertical {
     flex-direction: column;
   }
+
+  &--bg {
+    background: map-get($colors, 'white');
+  }
 }
 
 @include media('>=desktop') {

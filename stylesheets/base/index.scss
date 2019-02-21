@@ -32,7 +32,8 @@ a {
   text-decoration: none;
 
   &:hover,
-  &:active {
+  &:active,
+  &.nuxt-link-active {
     color: map-get($colors, 'text');
   }
 }
@@ -51,6 +52,7 @@ input {
   font-size: 1.2rem;
   border: none;
   padding: 0.5rem;
+  -webkit-appearance: none;
 
   &::placeholder {
     color: lighten(map-get($colors, 'text'), 60%);
