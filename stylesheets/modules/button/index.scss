@@ -4,8 +4,17 @@
   border-radius: 0.3rem;
   cursor: pointer;
 
+  &--loading {
+    background-image: url('~/loading.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: darken(map-get($colors, 'yellow'), 5%);
+    color: transparent;
+  }
+
   &:active,
   &:hover {
-    background: darken(map-get($colors, 'yellow'), 5%);
+    background-color: darken(map-get($colors, 'yellow'), 5%);
   }
 }

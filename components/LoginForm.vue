@@ -5,7 +5,11 @@
         input.input.l-line(type="email", v-model="email", placeholder="Email")
         input.input.l-line(type="password", v-model="password", placeholder="Password")
 
-      input.button.l-line(type="submit", value="Submit")
+      input.button.l-line(
+        type="submit"
+        value="Submit"
+        :style="{ 'button--loading': loading }"
+      )
 
     .l-block(
       v-if="error"
@@ -19,7 +23,8 @@ export default {
     return {
       email: '',
       password: '',
-      error: null
+      error: null,
+      loading: false
     }
   },
 
@@ -27,12 +32,14 @@ export default {
     authLogin() {
       const { email, password, $store, $router } = this
       if (email) {
+        this.loading = true
         $store
           .dispatch('auth/login', {
             email,
             password
           })
           .then(response => {
+            this.loading = false
             if ($store.getters['auth/isAuthenticated']) {
               $router.push({ path: '/' })
             }
