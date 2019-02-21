@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div(:class="$style.formCase")
     form.l-block(:class="$style.form", @submit.prevent="authLogin")
       .l-line(:class="$style.credentials")
         input.input.l-line(type="email", v-model="email", placeholder="Email")
@@ -31,24 +31,22 @@ export default {
   methods: {
     authLogin() {
       const { email, password, $store, $router } = this
-      if (email) {
-        this.loading = true
-        $store
-          .dispatch('auth/login', {
-            email,
-            password
-          })
-          .then(response => {
-            this.loading = false
-            if ($store.getters['auth/isAuthenticated']) {
-              $router.push({ path: '/' })
-            }
-            this.error =
-              response.status && response.status.toString().indexOf(4) > -1
-                ? response.data.message
-                : null
-          })
-      }
+      this.loading = true
+      $store
+        .dispatch('auth/login', {
+          email,
+          password
+        })
+        .then(response => {
+          this.loading = false
+          if ($store.getters['auth/isAuthenticated']) {
+            $router.push({ path: '/' })
+          }
+          this.error =
+            response.status && response.status.toString().indexOf(4) > -1
+              ? response.data.message
+              : null
+        })
     }
   }
 }
@@ -60,9 +58,15 @@ export default {
   flex-direction: column;
 }
 
-@include media('>=tablet') {
-  .form {
-    min-width: 15rem;
+.formCase {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@include media('>=mobile') {
+  .formCase {
+    width: 16rem;
+    padding: 0;
   }
 }
 
